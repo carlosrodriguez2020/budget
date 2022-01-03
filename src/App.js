@@ -1,11 +1,13 @@
 import React from 'react';
-
+import AskBudget from './component/AskBudget';
 function App() {
   return (
-    <div>
-      <h1>Estimated budget</h1>
-
+  <>
+    <h1>Estimated Budget</h1>
+    <div className="contenido principal contenido">
+      <AskBudget />
     </div>
+</>
   );
 }
 
