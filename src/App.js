@@ -10,14 +10,13 @@ function App() {
   const [budget, setBudget] = useState(0);
   const [rest, setRest] = useState(0);
   const [showComponent, setShowComponent]= useState(true);
-  const [expenses, setExpense] = useState([]);
-  // const [expend, setExpend] = useState({})
+  const [expenses, setExpenses] = useState([]);
   
   
-  const cosa =  expend =>{
-    setExpense([
+  const addExpense =  expense =>{
+    setExpenses([
       ...expenses,
-      expend
+      expense
     ])
   }
   
@@ -25,11 +24,6 @@ function App() {
 
   },[ ]);
 
- 
-
-
-
-  
   return (
   <>
     <h1>Estimated Budget</h1>
@@ -48,7 +42,7 @@ function App() {
         <div className='one-half column'>
           <h2>Add Expenses</h2>
           <Form 
-            cosa={cosa}
+            addExpense={addExpense}
             />  
         </div>
         <div className='one-half column'>

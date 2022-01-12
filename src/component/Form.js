@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import Error from './Error';
 import { nanoid } from 'nanoid'
 
-const Form = ({cosa}) => {
+const Form = ({addExpense}) => {
     const [nameExpend, setNameExpend] = useState("");
     const [amountExpend, setAmountExpend] = useState("");
     const [error, setError] = useState(false);
@@ -24,13 +24,13 @@ const Form = ({cosa}) => {
     setError(false)
    
 
-    const expend ={
+    const expense ={
         nameExpend,
         amountExpend,
         id:nanoid()
     };
 
-    cosa(expend)
+    addExpense(expense)
     // reset form
     setNameExpend('')
     setAmountExpend(0)

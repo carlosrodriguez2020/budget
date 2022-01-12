@@ -2,10 +2,10 @@ import React from "react";
 
 const Expense = ({expense}) => {
 return(
-    <li className="gasto">
+    <li className="gastos">
         {expense.nameExpend}
         <br/>
-        <span className="gasto">{expense.amountExpend}</span>
+        <span className="gastos">$ {expense.amountExpend}</span>
     </li>
 )    
 
