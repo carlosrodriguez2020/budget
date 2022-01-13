@@ -11,18 +11,26 @@ function App() {
   const [rest, setRest] = useState(0);
   const [showComponent, setShowComponent]= useState(true);
   const [expenses, setExpenses] = useState([]);
+  const [expense, setExpense] = useState({})
+  const [isNewExpense, setIsNewExpense] = useState(false)
   
   
-  const addExpense =  expense =>{
-    setExpenses([
-      ...expenses,
-      expense
-    ])
-  }
+ 
   
   useEffect(()=>{
 
-  },[ ]);
+    if(isNewExpense){
+      setExpenses([
+        ...expenses,
+        expense
+      ])
+      const remainingBudget = rest - expense.amountExpend;
+      setRest(remainingBudget)
+
+      setIsNewExpense(false)
+    }
+
+  },[ expense, isNewExpense, rest, expenses]);
 
   return (
   <>
@@ -42,7 +50,8 @@ function App() {
         <div className='one-half column'>
           <h2>Add Expenses</h2>
           <Form 
-            addExpense={addExpense}
+            setExpense={setExpense}
+            setIsNewExpense={setIsNewExpense}
             />  
         </div>
         <div className='one-half column'>

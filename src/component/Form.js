@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import Error from './Error';
 import { nanoid } from 'nanoid'
 
-const Form = ({addExpense}) => {
+const Form = ({setExpense,setIsNewExpense}) => {
     const [nameExpend, setNameExpend] = useState("");
     const [amountExpend, setAmountExpend] = useState("");
     const [error, setError] = useState(false);
@@ -30,10 +30,12 @@ const Form = ({addExpense}) => {
         id:nanoid()
     };
 
-    addExpense(expense)
+    setExpense(expense)
+    setIsNewExpense(true)
+
     // reset form
     setNameExpend('')
-    setAmountExpend(0)
+    setAmountExpend('')
 }
 
 return(
